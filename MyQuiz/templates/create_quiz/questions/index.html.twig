@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une question{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <h1>Ajouter une question</h1>
+     {{ form_start(questionForm) }}
+        {{ form_row(questionForm.name, {
+             'attr' : {'class':'form-control bg-lightblue border-lightblue text-green'},
+            label: 'Nouvelle question :'
+        }) }}
+         {{ form_row(questionForm.quizName, {
+              'attr' : {'class':'form-control bg-lightblue border-lightblue text-green'},
+            label: 'Catégorie :'
+        }) }}
+        
+        <button type="submit" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+        Valider les changements</button>
+        
+    {{ form_end(questionForm) }}
+    <a href="{{path('home')}}" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+    Retour à la page principale</a>
+    <a href="{{path('create_quiz')}}" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+    Retour à la création de quiz</a>
+
+    
+</div>
+{% endblock %}

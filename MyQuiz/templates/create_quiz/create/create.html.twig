@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau quiz{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <h1>Créer un nouveau quiz</h1>
+     {{ form_start(form) }}
+        {{ form_row(form.name, {
+            label: 'Nouveau titre de quiz :',
+            'attr' : {'class':'form-control bg-lightblue border-lightblue text-green'}
+        }) }}
+         {{ form_row(form.quiz_categories, {
+             'attr' : {'class':'form-control bg-lightblue border-lightblue text-green'},
+            label: 'Catégorie :'
+        }) }}
+        
+        <button type="submit" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+        Valider les changements</button>
+        
+    {{ form_end(form) }}
+    <a href="{{path('home')}}" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+    Retour à la page principale</a>
+    <a href="{{path('create_quiz')}}" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+    Retour à la création de quiz</a>
+
+    
+</div>
+{% endblock %}

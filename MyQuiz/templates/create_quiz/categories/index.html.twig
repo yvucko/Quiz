@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer une nouvelle catégorie{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <h1 class="mt-3 mb-5">Créer une nouvelle catégorie :</h1>
+     {{ form_start(categorieForm) }}
+        {{ form_row(categorieForm.name, {
+            'attr' : {'class':'form-control bg-lightblue border-lightblue text-green'},
+            label : 'Nom de la nouvelle catégorie :'
+        }) }}
+        
+        <button type="submit" class="btn btn-lg bg-lightblue border-lightblue text-green mt-4">
+        Valider les changements</button>
+        
+    {{ form_end(categorieForm) }}
+    <a href="{{path('home')}}" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+    Retour à la page principale</a>
+    <a href="{{path('create_quiz')}}" class="btn btn-lg bg-lightblue border-lightblue text-green mt-3">
+    Retour à la création de quiz</a>
+
+    
+</div>
+{% endblock %}

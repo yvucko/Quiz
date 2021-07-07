@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz - Détails{% endblock %}
+
+{% block body %}
+
+    <h4> {{quiz.name }}</h4>
+           
+
+    {% for question in quiz.quizQuestions %}
+
+                
+    <p>{{ question.name }}</p>
+
+    {% for answer in question.quizAnswers %}
+    
+        {{answer.name}}
+    
+        {% endfor %}
+
+                
+{% endfor %}
+
+
+<div class="row justify-content-center">
+<div class="col-lg-6">
+<a href="{{path('home')}}" class="btn btn-lg bg-lightblue border-lightblue text-green d-flex justify-content-center">
+Retour à la page principale</a>
+</div>
+</div>
+
+{% endblock %}

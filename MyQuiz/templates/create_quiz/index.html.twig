@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un quiz{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+<div class="row mt-4">
+<div class="col-lg-6">
+<div class="d-flex flex-column justify-content-center">
+<a href="{{path('user_add_categories')}}" class="btn btn-lg bg-lightblue border-lightblue text-green m-2">
+Ajouter une nouvelle catégorie</a>
+<a href="{{path('user_add_questions')}}" class="btn btn-lg bg-lightblue border-lightblue text-green m-2">
+Ajouter de nouvelles questions</a>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="d-flex flex-column justify-content-center">
+<a href="{{path('user_add_quiz')}}" class="btn btn-lg bg-lightblue border-lightblue text-green m-2">
+Ajouter un nouveau quiz</a>
+<a href="{{path('user_add_answers')}}" class="btn btn-lg bg-lightblue border-lightblue text-green m-2">
+Ajouter des réponses</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+{% endblock %}

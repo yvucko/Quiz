@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+
+{% if app.user is same as null %}
+<div class="row mt-4 justify-content-center">
+<h1>Bienvenue sur MyQuiz !</h1>
+</div>
+
+<div class="row mb-5 justify-content-center">
+<h5>Déjà inscrit? <a class="color-lightblue" href="{{path('app_login')}}">Connectez-vous !</a></h5>
+</div>
+
+{% else %}
+<div class="row mt-4 mb-5 justify-content-center">
+<h1>Bienvenue sur MyQuiz {{ app.user.pseudo }} !</h1>
+</div>
+{% endif %}
+
+
+
+<div class="row justify-content-center">
+<div class="col-md-6 my-5 py-3 rounded bg-lightblue">
+<h3 class="mb-5">Explorez nos catégories :</h3>
+{% for categorie in categorie %}
+<div class="m-2 text-left">
+    <h5 class=" my-2"><a class="color-lightblue" href="/quiz/quizname/{{categorie.id}}">{{ categorie.name }}</a></h5>
+</div>
+{% endfor %}
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-6 my-5 py-3 text-center">
+ {% if app.user is same as null %}
+<h5>Vous voulez mettre au défi d'autres personnes?</h5>
+<h5><a class="color-lightblue" href="{{path('app_register')}}">Inscrivez-vous</a> 
+et venez créer vos propres quiz !</h5>
+{% endif %}
+</div>
+</div>
+
+
+
+{% if app.user is same as null %}
+
+{% endif %}
+
+</div>
+{% endblock %}

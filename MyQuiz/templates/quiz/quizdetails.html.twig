@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz - Détails{% endblock %}
+
+{% block body %}
+<div class="container test">
+<div class="row mt-3 mb-4 d-flex justify-content-center">
+    <h3 class="color-lightblue"> {{quiz.name }}</h3>
+</div>
+<div class="row mb-5 d-flex justify-content-center">
+<div class="col-lg-6 text-center">
+    {% for question in quiz.quizQuestions %}
+
+    <div class="mt-5">        
+    <p class="color-lightblue">{{ question.name }}</p>
+    </div>
+    {% for answer in question.quizAnswers %}
+    <div class="mr-3">
+        <p> - {{answer.name}}</p>
+    </div>
+        {% endfor %}
+
+                
+{% endfor %}
+</div>
+</div>
+
+<div class="row justify-content-center">
+<div class="col-lg-6">
+<a href="{{path('categories')}}" class="mb-2 btn btn-lg bg-lightblue border-lightblue text-green d-flex justify-content-center">
+Retour aux catégories</a>
+<a href="{{path('home')}}" class="btn mb-3 btn-lg bg-lightblue border-lightblue text-green d-flex justify-content-center">
+Retour à la page principale</a>
+</div>
+</div>
+</div>
+{% endblock %} 

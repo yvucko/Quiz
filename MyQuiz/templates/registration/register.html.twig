@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyQuiz - Inscription{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <div class="container">
+    <div class="form-group">
+    <div class="row justify-content-center mt-3">
+    <h1>Inscription</h1>
+    </div>
+
+    <div class="row justify-content-center mt-5 text-center">
+    <div class="col-lg-4">
+    {{ form_start(registrationForm) }}
+        <h5>{{ form_row(registrationForm.pseudo) }}</h5>
+        <h5>{{ form_row(registrationForm.name) }}</h5>
+        <h5>{{ form_row(registrationForm.firstname) }}</h5>
+        <h5>{{ form_row(registrationForm.email) }}</h5>
+        <h5>{{ form_row(registrationForm.plainPassword) }}</h5>
+        
+    <div class="mt-4">
+        <button type="submit" class="bg-lightblue border-lightblue text-green mt-3 btn btn-lg btn-primary">S'inscrire</button>
+    </div>
+    {{ form_end(registrationForm) }}
+    </div>
+    </div>
+    </div>
+    </div>
+    
+{% endblock %}

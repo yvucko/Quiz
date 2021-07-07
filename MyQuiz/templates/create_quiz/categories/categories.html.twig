@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz - Catégories{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="row justify-content-center">
+{% for categories in categories %}
+<div class="col-lg-3 m-2 text-center">
+    <h4>{{ categories.name }}</h4>
+</div>
+{% endfor %}
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-6">
+<a href="{{path('home')}}" class="btn btn-lg bg-lightblue border-lightblue text-green d-flex justify-content-center">
+Retour à la page principale</a>
+</div>
+</div>
+</div>
+{% endblock %}

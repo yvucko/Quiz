@@ -1,0 +1,43 @@
+
+
+.font-family{
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.fullscreen{
+    height: 100vh;
+}
+
+.bg-blue{
+    background-color: #ffffff;
+}
+
+.text-green{
+    color: #b83333;
+}
+
+.nav-toggle{
+    color: #ffffff;
+    border-color: #8BBEB2;
+}
+
+.bg-darkblue{
+    background-color: #000000;
+}
+
+.bg-lightblue{
+    background-color : #929292;
+}
+
+.color-lightblue{
+   color : #000000;
+}
+
+.border-lightblue{
+    border-color: #384E77;
+}
+
+a{
+    color: #8BBEB2;
+}
+

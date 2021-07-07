@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz {% endblock %}
+
+{% block body %}
+
+<div class="row justify-content-center my-5">
+{% for quiz_categories in quizname.quizNames %}
+<div class="col-lg-3 m-2 text-center bg-lightblue py-5 rounded my-3">
+    <h4><a class="color-lightblue" href="/quiz/quizdetails/{{quiz_categories.id}}">{{ quiz_categories.name }}</a></h4>
+</div>
+{% endfor %}
+
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-6">
+<a href="{{path('categories')}}" class="mt-1 btn btn-lg bg-lightblue border-lightblue text-green d-flex justify-content-center">
+Retour aux catégories</a>
+<a href="{{path('home')}}" class=" mt-3 mb-3 btn btn-lg bg-lightblue border-lightblue text-green d-flex justify-content-center">
+Retour à la page principale</a>
+</div>
+</div>
+
+{% endblock %}

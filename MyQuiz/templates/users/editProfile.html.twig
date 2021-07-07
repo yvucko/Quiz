@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyQuiz - Profil{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+<div class="row mb-5">
+    <h1>Mon profil</h1>
+</div>
+  {{ form_start(form) }}
+        {{ form_row(form.pseudo, {
+            label: 'Pseudo :'
+        }) }}
+        {{ form_row(form.name,{
+            label: 'Nom :'
+        }) }}
+        {{ form_row(form.firstname, {
+            label: 'Prénom :'
+        }) }}
+        {{ form_row(form.email, {
+            label: 'Email :'
+        }) }}
+        <button type="submit" class="btn btn-lg bg-lightblue border-lightblue text-green btn-primary mt-3">
+        Valider les changements</button>
+    {{ form_end(form) }}
+        
+{% endblock %}
